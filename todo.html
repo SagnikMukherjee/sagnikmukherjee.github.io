@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif; /* Change to Roboto font */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-left: 350px;
+        }
+
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .todo-item .checkbox {
+            margin-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .todo-item label {
+            flex-grow: 1;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Import Roboto font -->
+</head>
+<body>
+    <div id="top-bar-container"></div>
+    <div class="container">
+        <h2>List 100</h2    >
+        <h2>Inspired from Chip Huyen</h2>
+        <p>Things I want to do before I die. Please let me know if you have any recommendation.</p>
+        <p>Progress as of Apr 7, 2024: 40.75/92.</p>
+        <ul class="todo-list">
+            <li class="todo-item">
+                <span class="checkbox">&#10003;</span>
+                <label class="completed">Paraglide</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10003;</span>
+                <label  class="completed">Live in another country</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10003;</span>
+                <label  class="completed">Work at a non-profit org</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Start my own Bengali podcast</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Solo author a research paper</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Skydive</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Learn to play the guitar</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Finish Tagore (to a reasonable extent)</label>
+            </li>
+            <li class="todo-item">
+                <span class="checkbox">&#10007;</span>
+                <label>Learn Spanish</label>
+            </li>
+            <!-- Add more tasks as needed -->
+        </ul>
+    </div>
+    
+  <script>
+    // Include top bar content
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('topbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('top-bar-container').innerHTML = data;
+            });
+    });
+</script>
+</body>
+</html>
