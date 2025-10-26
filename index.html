@@ -60,6 +60,21 @@
     span.highlight {
       background-color: #ffffd0;
     }
+    .tag-button {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: sans-serif;
+      text-decoration: none;
+      color: black;
+      background: white;
+      margin-right: 6px;
+    }
+    .tag-button:hover {
+      background: #f3f3f3;
+    }
   </style>
   <link rel="icon" type="image/png" href="images/dp_1.png">
   <title>Sagnik Mukherjee</title>
@@ -87,7 +102,7 @@
               <p align="center">
                 <name>Sagnik Mukherjee</name>
               </p>
-              <p>I am a first year PhD student at the University of Illinois, Urbana Champaign, advised by <a href="https://scholar.google.com/citations?user=GMcL_9kAAAAJ" target="_blank">Prof. Dilek Hakkani-Tur</a>. Previously I worked at the Bing Ads Team at Microsoft, where I worked on Dense and Generative retrieval for Ads Snippets. I also spent 3 months as a Research Assistant at MBZUAI working with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank">Prof. Monojit Choudhury</a>. 
+              <p>I am a Second year PhD student at the University of Illinois, Urbana Champaign, advised by <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank">Prof. Dilek Hakkani-Tur</a> and <a href="https://haopeng-nlp.github.io" target="_blank">Prof. Hao Peng</a>. Previously I worked at the Bing Ads Team at Microsoft, where I worked on Dense and Generative retrieval for Ads Snippets. I also spent 3 months as a Research Assistant at MBZUAI working with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank">Prof. Monojit Choudhury</a>. 
               </p>
               <p> I graduated from Indian Institute of Technology Kanpur in 2021 with a bachelors degree in Electrical Engineering. While at IIT Kanpur, I worked with <a href="https://ashutosh-modi.github.io/" target="_blank">Prof. Ashutosh Modi</a> and <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank">Prof. Arnab Bhattacharya</a> </p>
               
@@ -109,7 +124,13 @@
             <td width="100%" valign="middle">
               <heading>Research</heading>
               <p>
-                My primary interest is in NLP, especially LLM agents and robust evaluation of LLMs. Currectly I am exploring information aggregation tasks on the web with multi-agent collaboration. Previously I have worked on Socio-Cultural aspects of LLMs. 
+                My research is centred around Large Language Models. More specifically, I am interested in building next generation LLMs that can continually and scalably learn from interactions. To this end, my work includes
+                  <ul>
+                      <li><strong>Training dynamics of SFT and RL:</strong> We were the first to empirically show that RL causes sparse parameter updates to a base LLM. For eg. when training DeepSeek R1 Zero from DeepSeek V3 base, 86% weights were never updated.<a class="tag-button" href="https://x.com/saagnikkk/status/1924885542468256212">Tweet</a><a class="tag-button" href="https://arxiv.org/pdf/2505.11711">Paper</a><a class="tag-button" href="https://github.com/SagnikMukherjee/sparsity_in_rl/tree/main">Code</a> </li>
+                      <li><strong>Verification in Natural Language:</strong> We showed that LLMs are able to find the structure of deductive reasoning by finding the correct premises. By a simple intervention of 1. first finding the correct set of premises, and 2. verifying steps under the premises, we improve verification significantly. <a class="tag-button" href="https://x.com/saagnikkk/status/1918387564945219598">Tweet</a><a class="tag-button" href="https://arxiv.org/pdf/2502.02362">Paper</a><a class="tag-button" href="https://github.com/SagnikMukherjee/PARC/tree/main">Code</a> </li>
+                      <li><strong>Agentic Reasoning: </strong>Our multi-agent information aggregation framework (web agent based) improved multi-hop QA performance significantly. <a class="tag-button" href="https://x.com/saagnikkk/status/1852506512826007563">Tweet</a><a class="tag-button" href="https://www.arxiv.org/pdf/2410.19054">Paper</a><a class="tag-button" href="https://github.com/gangiswag/infogent">Code</a> </li>
+                      <li><strong>Social Reasoning:</strong> In our survey, we were the first to call out that there is a severe over-simplification of the concept of "culture" in LLMs-and-culture research, and provided recommendations on the measures to be taken <a class="tag-button" href="https://twitter.com/...">Tweet</a><a class="tag-button" href="https://twitter.com/...">Paper</a>. In another work, we showed that the concept of bias in LLMs is not systematic, but rather random. <a class="tag-button" href="https://twitter.com/...">Tweet</a><a class="tag-button" href="https://twitter.com/...">Paper</a></li>
+                  </ul>
               </p>
             </td>
           </tr>
@@ -120,14 +141,71 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
           <tr>
             <td width="100%" valign="middle">
-              <heading>Papers</heading>
+              <heading>News</heading>
             </td>
           </tr>
         </table>
 
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="top">
+              <ul>
+                <li><strong>September 2025:</strong> Received the Neurips scholar award! See you at San Diego. </li>
+                <li><strong>September 2025:</strong> Our RL subnetwork paper was accepted at <strong>Neurips 2025 !</strong></li>
+                <li><strong>May 2025:</strong> Starting my summer internship at <a href="https://www.microsoft.com/en-us/research/group/ai-interaction-and-learning/" target="blank">AIIL group</a>, Microsoft Research. I will be working on how LLMs behave in an ambiguous underspecified world.</li>
+                <li><strong>May 2025:</strong> We released <a href="https://arxiv.org/abs/2505.11711" target="_blank">new research</a> showing that RL causes sparse updates (naturally) to a base model. </li>
+                <li><strong>May 2025:</strong> <a href="https://arxiv.org/abs/2502.02362" target="_blank">PARC</a> got accepted at <strong>ICML 2025!</strong> </li>
+                <li><strong>Feb 2025:</strong> New <a href="https://arxiv.org/abs/2502.02362" target="_blank">pre-print</a>  on Chain-of-thought verification. We showed that LLMs can verify chain-of-thoughts better via a simple structure induction. </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
 
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <heading>Selected Papers</heading>
+            </td>
+          </tr>
+        </table>
 
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td width="25%">
+              <div class="one">
+                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/sparsity.png'></a>
+              </div>
+              
+            </td>
+            <td valign="top" width="75%">
+                <a href="https://arxiv.org/abs/2505.11711" target="_blank">
+                    <papertitle>Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</papertitle>
+                </a>
+                <br>
+                  Sagnik Mukherjee, Lifan Yuan, Dilek Hakkani-Tur, Hao Peng
+                <br>
+                <em>NeurIPS 2025</em>
+                <p>RL causes sparse updates to a base model. </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+              <div class="one">
+                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/parc.png'></a>
+              </div>
+              
+            </td>
+            <td valign="top" width="75%">
+                <a href="https://arxiv.org/abs/2502.02362" target="_blank">
+                    <papertitle>Premise-Augmented Reasoning Chains Improve Error Identification in Math reasoning with LLMs</papertitle>
+                </a>
+                <br>
+                    Sagnik Mukherjee*, Abhinav Chinta*, Takyoung Kim, Tarun Anoop Sharma, Dilek Hakkani-Tür
+                <br>
+                <em>ICML 2025</em>
+                <p>Structure induction improves error identification. </p>
+            </td>
+        </tr>
         <tr>
             <td width="25%">
               <div class="one">
@@ -146,7 +224,7 @@
                 <p>We propose a taxonomy of how the community has been studying culture so far.</p>
             </td>
         </tr>
-	<tr>
+	      <tr>
             <td width="25%">
               <div class="one">
                 <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/placebo_paper.png'></a>
