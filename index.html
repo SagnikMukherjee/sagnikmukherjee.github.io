@@ -1,282 +1,156 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name=viewport content="width=800">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    
-    a {
-      color: #1772d0;
-      text-decoration: none;
-    }
-    
-    a:focus,
-    a:hover {
-      color: #f09228;
-      text-decoration: none;
-    }
-    
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 15px
-    }
-    
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 15px;
-    }
-    
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
-    }
-    
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 700
-    }
-    
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-    }
-    
-    .one {
-      width: 160px;
-      height: 120px;
-      position: relative;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sagnik Mukherjee</title>
+<meta name="description" content="Sagnik Mukherjee — PhD candidate at UIUC working on reinforcement learning for language models.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/style.css?v=1793047716">
 
-    
-    span.highlight {
-      background-color: #ffffd0;
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sagnik Mukherjee">
+<meta property="og:description" content="PhD candidate at UIUC working on reinforcement learning for language models.">
+<meta property="og:url" content="https://sagnikmukherjee.github.io/">
+<meta property="og:image" content="https://sagnikmukherjee.github.io/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+
+<script>
+  (function () {
+    var d = document.documentElement, t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    .tag-button {
-      display: inline-block;
-      padding: 2px 10px;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-      font-size: 13px;
-      font-family: sans-serif;
-      text-decoration: none;
-      color: black;
-      background: white;
-      margin-right: 6px;
-    }
-    .tag-button:hover {
-      background: #f3f3f3;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="images/dp_1.png">
-  <title>Sagnik Mukherjee</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167314770-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-167314770-1');
-  </script>
+    d.dataset.theme = t;
+    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#000000';
+    d.classList.add('js');
+    // if art.js never runs, don't leave the text hidden
+    setTimeout(function () { d.classList.add('ready'); }, 2500);
+  })();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167314770-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-167314770-1');
+</script>
 </head>
-
 <body>
-    <div id="top-bar-container"></div>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="67%" valign="middle">
-              <p align="center">
-                <name>Sagnik Mukherjee</name>
-              </p>
-              <p>I am a Second year PhD student at the University of Illinois, Urbana Champaign, advised by <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank">Prof. Dilek Hakkani-Tur</a> and <a href="https://haopeng-nlp.github.io" target="_blank">Prof. Hao Peng</a>. Previously I worked at the Bing Ads Team at Microsoft, where I worked on Dense and Generative retrieval for Ads Snippets. I also spent 3 months as a Research Assistant at MBZUAI working with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank">Prof. Monojit Choudhury</a>. 
-              </p>
-              <p> I graduated from Indian Institute of Technology Kanpur in 2021 with a bachelors degree in Electrical Engineering. While at IIT Kanpur, I worked with <a href="https://ashutosh-modi.github.io/" target="_blank">Prof. Ashutosh Modi</a> and <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank">Prof. Arnab Bhattacharya</a> </p>
-              
-              <p align=center>
-                <a href="mailto:mukherjeesagnik2314@gmail.com" target="_blank">Email</a> &nbsp/&nbsp
-                <a href="https://drive.google.com/file/d/1o-yg37tisc6H9XNygQpwjWi1FunAZmHY/view" target="_blank">CV</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/sagnik-mukherjee-465825160/" target="_blank">LinkedIn</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&hl=en" target="_blank">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/saagnikkk" target="_blank">Twitter</a> 
-              </p>
-            </td>
-            <td width="33%" style="padding-top: 100px;">
-              <img style="width:100%;max-width:100%" src="img/dp_1.png">
-            </td>
-          </tr>
-        </table>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Research</heading>
-              <p>
-                My research is centred around Large Language Models. More specifically, I am interested in building next generation LLMs that can continually and scalably learn from interactions. To this end, my work includes
-                  <ul>
-                      <li><strong>Training dynamics of SFT and RL:</strong> We were the first to empirically show that RL causes sparse parameter updates to a base LLM. For eg. when training DeepSeek R1 Zero from DeepSeek V3 base, 86% weights were never updated.<a class="tag-button" href="https://x.com/saagnikkk/status/1924885542468256212">Tweet</a><a class="tag-button" href="https://arxiv.org/pdf/2505.11711">Paper</a><a class="tag-button" href="https://github.com/SagnikMukherjee/sparsity_in_rl/tree/main">Code</a> </li>
-                      <li><strong>Verification in Natural Language:</strong> We showed that LLMs are able to find the structure of deductive reasoning by finding the correct premises. By a simple intervention of 1. first finding the correct set of premises, and 2. verifying steps under the premises, we improve verification significantly. <a class="tag-button" href="https://x.com/saagnikkk/status/1918387564945219598">Tweet</a><a class="tag-button" href="https://arxiv.org/pdf/2502.02362">Paper</a><a class="tag-button" href="https://github.com/SagnikMukherjee/PARC/tree/main">Code</a> </li>
-                      <li><strong>Agentic Reasoning: </strong>Our multi-agent information aggregation framework (web agent based) improved multi-hop QA performance significantly. <a class="tag-button" href="https://x.com/saagnikkk/status/1852506512826007563">Tweet</a><a class="tag-button" href="https://www.arxiv.org/pdf/2410.19054">Paper</a><a class="tag-button" href="https://github.com/gangiswag/infogent">Code</a> </li>
-                      <li><strong>Social Reasoning:</strong> In our survey, we were the first to call out that there is a severe over-simplification of the concept of "culture" in LLMs-and-culture research, and provided recommendations on the measures to be taken <a class="tag-button" href="https://twitter.com/...">Tweet</a><a class="tag-button" href="https://twitter.com/...">Paper</a>. In another work, we showed that the concept of bias in LLMs is not systematic, but rather random. <a class="tag-button" href="https://twitter.com/...">Tweet</a><a class="tag-button" href="https://twitter.com/...">Paper</a></li>
-                  </ul>
-              </p>
-            </td>
-          </tr>
-          
-          
-        </table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>News</heading>
-            </td>
-          </tr>
-        </table>
+<!-- the ground, then a small pantheon drawn in the open space on the right -->
+<div id="scene" aria-hidden="true">
+  <canvas id="paper"></canvas>
+  <canvas id="art" title="Click for the next one"></canvas>
+</div>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="top">
-              <ul>
-                <li><strong>September 2025:</strong> Received the Neurips scholar award! See you at San Diego. </li>
-                <li><strong>September 2025:</strong> Our RL subnetwork paper was accepted at <strong>Neurips 2025 !</strong></li>
-                <li><strong>May 2025:</strong> Starting my summer internship at <a href="https://www.microsoft.com/en-us/research/group/ai-interaction-and-learning/" target="blank">AIIL group</a>, Microsoft Research. I will be working on how LLMs behave in an ambiguous underspecified world.</li>
-                <li><strong>May 2025:</strong> We released <a href="https://arxiv.org/abs/2505.11711" target="_blank">new research</a> showing that RL causes sparse updates (naturally) to a base model. </li>
-                <li><strong>May 2025:</strong> <a href="https://arxiv.org/abs/2502.02362" target="_blank">PARC</a> got accepted at <strong>ICML 2025!</strong> </li>
-                <li><strong>Feb 2025:</strong> New <a href="https://arxiv.org/abs/2502.02362" target="_blank">pre-print</a>  on Chain-of-thought verification. We showed that LLMs can verify chain-of-thoughts better via a simple structure induction. </li>
-              </ul>
-            </td>
-          </tr>
-        </table>
+<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+</button>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Selected Papers</heading>
-            </td>
-          </tr>
-        </table>
+<main id="app">
+  <header class="site">
+    <section class="box intro">
+    <div class="title-row">
+      <h1 class="reveal">Sagnik Mukherjee</h1>
+    </div>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tr>
-            <td width="25%">
-              <div class="one">
-                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/sparsity.png'></a>
-              </div>
-              
-            </td>
-            <td valign="top" width="75%">
-                <a href="https://arxiv.org/abs/2505.11711" target="_blank">
-                    <papertitle>Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</papertitle>
-                </a>
-                <br>
-                  Sagnik Mukherjee, Lifan Yuan, Dilek Hakkani-Tur, Hao Peng
-                <br>
-                <em>NeurIPS 2025</em>
-                <p>RL causes sparse updates to a base model. </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="25%">
-              <div class="one">
-                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/parc.png'></a>
-              </div>
-              
-            </td>
-            <td valign="top" width="75%">
-                <a href="https://arxiv.org/abs/2502.02362" target="_blank">
-                    <papertitle>Premise-Augmented Reasoning Chains Improve Error Identification in Math reasoning with LLMs</papertitle>
-                </a>
-                <br>
-                    Sagnik Mukherjee*, Abhinav Chinta*, Takyoung Kim, Tarun Anoop Sharma, Dilek Hakkani-Tür
-                <br>
-                <em>ICML 2025</em>
-                <p>Structure induction improves error identification. </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="25%">
-              <div class="one">
-                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/culture_survey.png'></a>
-              </div>
-              
-            </td>
-            <td valign="top" width="75%">
-                <a href="https://arxiv.org/abs/2403.15412" target="_blank">
-                    <papertitle>Towards Measuring and Modeling "Culture" in LLMs: A Survey</papertitle>
-                </a>
-              <br>
-              Muhammad Farid Adilazuarda*, <strong>Sagnik Mukherjee*</strong>,Pradhyumna Lavania, Siddhant Singh, Ashutosh Dwivedi, Alham Fikri Aji, Jacki O'Neill, Ashutosh Modi, Monojit Choudhury
-                <br>
-                <em>EMNLP 2024 (main)</em>
-                <p>We propose a taxonomy of how the community has been studying culture so far.</p>
-            </td>
-        </tr>
-	      <tr>
-            <td width="25%">
-              <div class="one">
-                <a target="_blank"><img style="width: 100%; max-width: 100%; height: 100%;" src='img/placebo_paper.png'></a>
-              </div>
-              
-            </td>
-            <td valign="top" width="75%">
-                <a href="https://arxiv.org/abs/2403.15412" target="_blank">
-                    <papertitle>Cultural Conditioning or Placebo? On the Effectiveness of Socio-Demographic Prompting</papertitle>
-                </a>
-              <br>
-              <strong>Sagnik Mukherjee∗</strong>, Muhammad Farid Adilazuarda∗, Sunayana Sitaram, Kalika Bali, Alham Fikri Aji, Monojit Choudhury
-                <br>
-                <em>EMNLP 2024 (main)</em>
-                <p>Studies the (in)-efficacy of sociodemographic prompting.</p>
-            </td>
-        </tr>
+    <p class="bio reveal">I’m a PhD candidate at UIUC, working on <b>Reinforcement Learning for LM post-training</b>
+      with <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noopener">Dilek Hakkani-Tür</a>
+      and <a href="https://haopeng-nlp.github.io" target="_blank" rel="noopener">Hao Peng</a>.
+      I was the first to discover <a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">emergent
+      structures in on-policy training</a>, which later spawned a research thread at the intersection of
+      optimization and on-policy training in LLMs.
+      Lately I’ve been thinking about agentic sequential decision making — specifically, the delayed
+      consequences of actions and partial observability. Feel free to reach out if you’d like to
+      collaborate or chat.</p>
 
+    <div class="social reveal">
+      <a href="mailto:sagnikm3@illinois.edu" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      <a href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+      <a href="https://twitter.com/saagnikkk" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+      <a href="https://github.com/SagnikMukherjee" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a href="/data/cv.pdf" target="_blank" rel="noopener" aria-label="CV" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></a>
+    </div>
+    </section>
+    <aside class="photo-col">
+      <img class="portrait reveal" src="/img/profile.jpg" alt="Sagnik Mukherjee" width="600" height="800">
+    </aside>
 
+    <section class="box news-box">
+    <div class="news">
+      <h3 class="reveal">News</h3>
+      <div class="news-scroll" tabindex="0" aria-label="News">
+        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">New preprint: <a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> — we explain, theoretically, why on-policy data causes sparse updates.</span></div>
+        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt"><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR</a> was accepted at <b>NeurIPS 2026</b>.</span></div>
+        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">Gave a talk, “Optimization Geometry in LLM Post-Training”, at the <a href="https://calendars.illinois.edu/detail/7097/33560703" target="_blank" rel="noopener">UIUC Machine Learning Seminar</a>.</span></div>
+        <div class="news-item reveal"><span class="date">Jul 2026</span><span class="nt">Presented <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam?</a> as an <b>Oral</b> at the ICML 2026 main conference in Seoul.</span></div>
+        <div class="news-item reveal"><span class="date">May 2026</span><span class="nt">Started my internship at <b>Microsoft Frontier Tuning</b>, hosted by Harsh Jhamtani and Jacob Andreas.</span></div>
+      </div>
+    </div>
+    </section>
 
-        
-        
-		   
-        
-        
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <br>
-              <p align="right">
-                <font size="2">
-                  <br><a href="https://jonbarron.info/">Template from here</a></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        
+    <section class="box papers">
+    <nav class="list">
+      <h3 class="reveal">Papers</h3>
+<!-- POSTS:research -->
+<!-- /POSTS:research -->
+      <a class="reveal" href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag preprint">Preprint</span> Understanding LLM Parameter Update Sparsity through the Lens of Fisher</span>
+        <span class="date">Sept 2026</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2607.19331" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag preprint">Preprint</span> ISO: An RLVR-Native Optimization Stack</span>
+        <span class="date">Jul 2026</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag">NeurIPS 2026</span> VASR: Variance-Aware Systematic Resampling for Reward-Guided Diffusion</span>
+        <span class="date">Apr 2026</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag oral">ICML 2026 · <u>Oral</u></span> Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</span>
+        <span class="date">Feb 2026</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag">NeurIPS 2025</span> Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</span>
+        <span class="date">May 2025</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2502.02362" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag">ICML 2025</span> Premise-Augmented Reasoning Chains Improve Error Identification in Math Reasoning</span>
+        <span class="date">Feb 2025</span>
+      </a>
+      <a class="reveal" href="https://arxiv.org/abs/2410.19054" target="_blank" rel="noopener">
+        <span class="lc"><span class="tag">NAACL 2025</span> Infogent: An Agent-Based Framework for Web Information Aggregation</span>
+        <span class="date">Oct 2024</span>
+      </a>
+    </nav>
+    </section>
 
-        </td>
-    </tr>
-  </table>
-<!--   <script>
-    // Include top bar content
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('topbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('top-bar-container').innerHTML = data;
-            });
-    });
-</script> -->
+    <section class="box mentoring" aria-labelledby="mentoring-heading">
+      <h3 id="mentoring-heading" class="reveal">Mentoring</h3>
+      <p class="reveal">I have had the opportunity to work with some amazing students.</p>
+      <ul class="mentoring-list">
+        <li class="reveal">
+          <a href="https://pavanjay.com/" target="_blank" rel="noopener">Pavan Jayasinha</a> <span class="mentoring-affiliation">— now at OpenAI</span>
+          <a class="mentoring-paper" href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a>
+        </li>
+        <li class="reveal">
+          <a href="https://mziycfh.github.io/" target="_blank" rel="noopener">Yufan Zhang</a> <span class="mentoring-affiliation">— visiting student at UIUC</span>
+          <a class="mentoring-paper" href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a>
+        </li>
+        <li class="reveal">Saket Vispute <span class="mentoring-affiliation">— student at IIT Bombay</span></li>
+      </ul>
+    </section>
+  </header>
+</main>
+
+<script src="/art.js?v=1793047396" defer></script>
 </body>
-
 </html>
-
