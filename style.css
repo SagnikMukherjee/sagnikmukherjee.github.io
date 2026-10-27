@@ -131,12 +131,15 @@ h1 {
 .intro .social { margin-top: auto; }
 .box :is(.list, .news, .mentoring, .research-directions) h3:first-child { margin-top: 0; }
 
-/* the photo: whole, uncropped, framed like the boxes */
+/* Frame the portrait lower to center the face and remove excess sky. */
 .portrait {
   pointer-events: auto;
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center bottom;
   box-sizing: border-box;
   padding: 8px;
   background: var(--paper);
