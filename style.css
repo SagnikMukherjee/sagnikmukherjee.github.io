@@ -116,8 +116,9 @@ h1 {
 .site > .photo-col { grid-column: 2; grid-row: 1; align-self: start; }
 /* papers run the full width, under both the intro and the photo */
 .site > .news-box { grid-column: 1 / -1; grid-row: 2; }
-.site > .papers { grid-column: 1 / -1; grid-row: 3; }
-.site > .mentoring { grid-column: 1 / -1; grid-row: 4; }
+.site > .research-directions { grid-column: 1 / -1; grid-row: 3; }
+.site > .papers { grid-column: 1 / -1; grid-row: 4; }
+.site > .mentoring { grid-column: 1 / -1; grid-row: 5; }
 .mentoring h3 { margin-top: 0; }
 .mentoring p { font-size: 12.5px; line-height: 1.65; }
 .mentoring-list { list-style: none; margin: 18px 0 0; padding: 0; }
@@ -128,7 +129,7 @@ h1 {
 
 /* pin the links to the bottom edge, so the box ends on the same line as the photo */
 .intro .social { margin-top: auto; }
-.box :is(.list, .news, .mentoring) h3:first-child { margin-top: 0; }
+.box :is(.list, .news, .mentoring, .research-directions) h3:first-child { margin-top: 0; }
 
 /* the photo: whole, uncropped, framed like the boxes */
 .portrait {
@@ -148,8 +149,9 @@ h1 {
   .site > .photo-col { grid-column: 1; grid-row: 1; width: 200px; }
   .site > .intro { grid-row: 2; }
   .site > .news-box { grid-row: 3; }
-  .site > .papers { grid-row: 4; }
-  .site > .mentoring { grid-row: 5; }
+  .site > .research-directions { grid-row: 4; }
+  .site > .papers { grid-row: 5; }
+  .site > .mentoring { grid-row: 6; }
 }
 
 .title-row {
@@ -177,14 +179,14 @@ h1 {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 24' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 24 10, 70 12, 110 10.5 S 178 9.5, 198 11.5 C 199 15.5, 172 18, 118 18.5 S 34 20.5, 3 18.5 Z' fill='%23d63422' fill-opacity='0.2'/%3E%3C/svg%3E")
     center 72% / 100% 70% no-repeat;
 }
-.bio a, .mentoring a {
+.bio a, .mentoring a, .research-directions a {
   color: var(--ink);
   font-weight: 400;
   text-decoration: none;
   border-bottom: 1px solid var(--red-soft);
   transition: color 0.25s, border-color 0.25s;
 }
-.bio a:hover, .mentoring a:hover { color: var(--red); border-color: var(--red); }
+.bio a:hover, .mentoring a:hover, .research-directions a:hover { color: var(--red); border-color: var(--red); }
 
 .social {
   display: flex;
@@ -243,7 +245,7 @@ h1 {
 
 .list { display: grid; gap: 2px; }
 
-:is(.list, .news, .mentoring) h3 {
+:is(.list, .news, .mentoring, .research-directions) h3 {
   position: relative;
   margin: 28px 0 6px;
   padding-bottom: 7px;
@@ -254,8 +256,8 @@ h1 {
   text-transform: uppercase;
   color: var(--ink);
 }
-:is(.list, .news, .mentoring) h3:first-child { margin-top: 0; }
-:is(.list, .news, .mentoring) h3::after {
+:is(.list, .news, .mentoring, .research-directions) h3:first-child { margin-top: 0; }
+:is(.list, .news, .mentoring, .research-directions) h3::after {
   /* a dry brush stroke under each heading */
   content: "";
   position: absolute;
@@ -267,7 +269,7 @@ h1 {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M3 7.5 C 46 4.5, 118 5.5, 176 6 S 262 5.5, 297 3.8 C 291 8.5, 248 10, 176 10.4 S 58 11.8, 5 10.6 Z' fill='%23000000' fill-opacity='0.72'/%3E%3Cpath d='M24 8.6 C 86 7.2, 158 7.8, 236 6.8' stroke='%23ffffff' stroke-width='0.8' fill='none' stroke-opacity='0.8'/%3E%3Cpath d='M70 6.6 C 128 6.1, 196 6.4, 268 5.6' stroke='%23ffffff' stroke-width='0.55' fill='none' stroke-opacity='0.7'/%3E%3C/svg%3E") left center / 100% 100% no-repeat;
 }
 
-:root[data-theme="dark"] :is(.list, .news, .mentoring) h3::after {
+:root[data-theme="dark"] :is(.list, .news, .mentoring, .research-directions) h3::after {
   opacity: 0.5;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M3 7.5 C 46 4.5, 118 5.5, 176 6 S 262 5.5, 297 3.8 C 291 8.5, 248 10, 176 10.4 S 58 11.8, 5 10.6 Z' fill='%23ffffff' fill-opacity='0.72'/%3E%3Cpath d='M24 8.6 C 86 7.2, 158 7.8, 236 6.8' stroke='%23000000' stroke-width='0.8' fill='none' stroke-opacity='0.8'/%3E%3Cpath d='M70 6.6 C 128 6.1, 196 6.4, 268 5.6' stroke='%23000000' stroke-width='0.55' fill='none' stroke-opacity='0.7'/%3E%3C/svg%3E");
 }
@@ -530,7 +532,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
   .lc { grid-template-columns: 1fr; row-gap: 3px; }
   .tag { font-size: 9.5px; }
   .date { font-size: 10.5px; }
-  :is(.list, .news, .mentoring) h3 { font-size: 11.5px; }
+  :is(.list, .news, .mentoring, .research-directions) h3 { font-size: 11.5px; }
   .post-body { font-size: 13px; }
 }
 
@@ -543,3 +545,11 @@ pre code { background: none; padding: 0; font-size: inherit; }
     clip-path: none;
   }
 }
+
+/* Research themes, with papers grouped beneath their motivating question. */
+.research-direction h4 { margin: 20px 0 9px; font-size: 13px; line-height: 1.5; }
+.research-direction p { margin: 0; font-size: 12.5px; line-height: 1.75; color: var(--ink-2); }
+.research-direction + .research-direction { margin-top: 24px; }
+.direction-papers { list-style: none; margin: 14px 0 0; padding: 0; }
+.direction-papers li { margin: 7px 0; font-size: 11.5px; line-height: 1.7; }
+.direction-venue { color: var(--ink-3); white-space: nowrap; }
