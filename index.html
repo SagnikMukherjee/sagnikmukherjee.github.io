@@ -9,14 +9,15 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap">
-<link rel="stylesheet" href="/style.css?v=1793121670">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="/style.css?v=1793310644">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sagnik Mukherjee">
 <meta property="og:description" content="PhD candidate at UIUC working on reinforcement learning for language models.">
 <meta property="og:url" content="https://sagnikmukherjee.github.io/">
-<meta property="og:image" content="https://sagnikmukherjee.github.io/img/profile-seattle.jpg">
+<meta property="og:image" content="https://sagnikmukherjee.github.io/img/profile-seattle-724.webp">
 <meta name="twitter:card" content="summary">
 
 <script>
@@ -29,18 +30,14 @@
     d.dataset.theme = t;
     if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#000000';
     d.classList.add('js');
-    // if art.js never runs, don't leave the text hidden
-    setTimeout(function () { d.classList.add('ready'); }, 2500);
+    // stagger the entrance as soon as the HTML is parsed — never wait on art.js
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.reveal').forEach(function (el, i) { el.style.setProperty('--i', i); });
+      d.classList.add('ready');
+    });
   })();
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167314770-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-167314770-1');
-</script>
 </head>
 <body>
 
@@ -61,27 +58,33 @@
     <div class="title-row">
       <h1 class="reveal">Sagnik Mukherjee</h1>
     </div>
+    <p class="tagline">PhD candidate, UIUC · LLMs · Post-training · Optimization · Multi-turn Decision Making</p>
 
-    <p class="bio reveal">I’m a PhD candidate at UIUC, working on <b>Reinforcement Learning for LM post-training</b>
+    <p class="bio">I was the first to discover <a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">emergent
+      structures in on-policy training</a>, which later spawned a research thread at the intersection of
+      optimization and on-policy training in LLMs. I work on <b>Reinforcement Learning for LM post-training</b>
       with <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noopener">Dilek Hakkani-Tür</a>
       and <a href="https://haopeng-nlp.github.io" target="_blank" rel="noopener">Hao Peng</a>.
-      I was the first to discover <a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">emergent
-      structures in on-policy training</a>, which later spawned a research thread at the intersection of
-      optimization and on-policy training in LLMs.
       Lately I’ve been thinking about agentic sequential decision making — specifically, the delayed
       consequences of actions and partial observability. Feel free to reach out if you’d like to
       collaborate or chat.</p>
 
-    <div class="social reveal">
-      <a href="mailto:sagnikm3@illinois.edu" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    <div class="social">
+      <a class="btn btn-solid" href="/data/cv.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>CV</span></a>
+      <a class="btn" href="mailto:sagnikm3@illinois.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Email</span></a>
       <a href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
       <a href="https://twitter.com/saagnikkk" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
       <a href="https://github.com/SagnikMukherjee" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-      <a href="/data/cv.pdf" target="_blank" rel="noopener" aria-label="CV" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></a>
     </div>
     </section>
     <aside class="photo-col">
-      <img class="portrait reveal" src="/img/profile-seattle.jpg" alt="Sagnik Mukherjee" width="724" height="1084">
+      <picture>
+        <source type="image/webp"
+          srcset="/img/profile-seattle-240.webp 240w, /img/profile-seattle-360.webp 360w, /img/profile-seattle-480.webp 480w, /img/profile-seattle-724.webp 724w"
+          sizes="(max-width: 680px) 150px, (max-width: 1180px) 200px, 255px">
+        <img class="portrait" src="/img/profile-seattle.jpg" alt="Sagnik Mukherjee" width="724" height="1084"
+          fetchpriority="high" decoding="async">
+      </picture>
     </aside>
 
     <section class="box news-box">
@@ -89,9 +92,9 @@
       <h3 class="reveal">News</h3>
       <div class="news-scroll" tabindex="0" aria-label="News">
         <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">New preprint: <a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> — we explain, theoretically, why on-policy data causes sparse updates.</span></div>
-        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt"><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR</a> was accepted at <b>NeurIPS 2026</b>.</span></div>
+        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt"><span class="tag">NeurIPS 2026</span><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR</a> was accepted at <b>NeurIPS 2026</b>.</span></div>
         <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">Gave a talk, “Optimization Geometry in LLM Post-Training”, at the <a href="https://calendars.illinois.edu/detail/7097/33560703" target="_blank" rel="noopener">UIUC Machine Learning Seminar</a>.</span></div>
-        <div class="news-item reveal"><span class="date">Jul 2026</span><span class="nt">Presented <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam?</a> as an <b>Oral</b> at the ICML 2026 main conference in Seoul.</span></div>
+        <div class="news-item reveal"><span class="date">Jul 2026</span><span class="nt"><span class="tag oral">ICML 2026 · <u>Oral</u></span>Presented <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam?</a> as an <b>Oral</b> at the ICML 2026 main conference in Seoul.</span></div>
         <div class="news-item reveal"><span class="date">May 2026</span><span class="nt">Started my internship at <b>Microsoft Frontier Tuning</b>, hosted by Harsh Jhamtani and Jacob Andreas.</span></div>
       </div>
     </div>
@@ -112,7 +115,7 @@
       <div class="research-direction">
         <h4 class="reveal">Sequential Decision Making</h4>
         <p class="reveal">How does the notion of &ldquo;Delayed consequences of actions&rdquo; and &ldquo;Partial Observability&rdquo; affect reasoning and decision making in LLMs?</p>
-        <p class="reveal">cooking ;)</p>
+        <p class="reveal direction-status">Work in progress — first results soon.</p>
       </div>
     </section>
 
@@ -170,6 +173,6 @@
   </header>
 </main>
 
-<script src="/art.js?v=1793047396" defer></script>
+<script src="/art.js?v=1793310467" defer></script>
 </body>
 </html>

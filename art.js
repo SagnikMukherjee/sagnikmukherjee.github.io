@@ -34,11 +34,6 @@ const palette = () => (isDark()
   : { ground: '#ffffff', ink: [0, 0, 0], red: [214, 52, 34] });
 let T = palette();
 
-/* ---------- entrance: stagger the text in ---------- */
-
-document.querySelectorAll('.reveal').forEach((el, i) => el.style.setProperty('--i', i));
-requestAnimationFrame(() => root.classList.add('ready'));
-
 /* ---------- ground: a flat fill ---------- */
 
 function drawPaper(canvas) {
@@ -555,16 +550,6 @@ function layout() {
 
 layout();
 
-// TEMP-FREEZE: ?art=gauss:9000 shows one figure frozen at that moment (for checking)
-const freeze = new URLSearchParams(location.search).get('art');
-if (freeze) {
-  const [name, ms] = freeze.split(':');
-  idx = Math.max(0, NAMES.indexOf(name));
-  const still = () => { layout(); render(started + Number(ms)); };
-  still();
-  return;
-}
-
 // click the drawing to move on to the next letter
 art.addEventListener('click', () => {
   const fig = FIGURES[idx];
@@ -581,17 +566,29 @@ if (REDUCED) {
   return;
 }
 
-let resizeTimer;
-addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => { layout(); started = performance.now(); }, 120);
-});
-// fonts arriving can shift the boxes; re-measure once they're in
-if (document.fonts) document.fonts.ready.then(() => { R = region(); if (R) FIGURES[idx].init(R); });
-
+// The loop only runs while there is room to draw (never on phones), and
+// only starts once the page has loaded, so it never competes with first paint.
+let running = false;
 function frame(now) {
+  if (!R) { g.clearRect(0, 0, W, H); running = false; return; }
   if (render(now)) begin((idx + 1) % FIGURES.length, now);
   requestAnimationFrame(frame);
 }
-requestAnimationFrame(frame);
+function start() {
+  if (running || !R) return;
+  running = true;
+  started = performance.now();
+  requestAnimationFrame(frame);
+}
+
+let resizeTimer;
+addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { layout(); started = performance.now(); start(); }, 120);
+});
+// fonts arriving can shift the boxes; re-measure once they're in
+if (document.fonts) document.fonts.ready.then(() => { R = region(); if (R) FIGURES[idx].init(R); start(); });
+
+if (document.readyState === 'complete') start();
+else addEventListener('load', start, { once: true });
 })();
