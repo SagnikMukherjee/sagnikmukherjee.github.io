@@ -47,7 +47,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .site-title { color: var(--text); font-weight: 600; font-size: 1.05rem; }
 .site-title:hover { text-decoration: none; }
-.masthead nav { display: flex; align-items: center; gap: 1.25rem; }
+.masthead nav { display: flex; align-items: center; gap: 1.25rem; margin-left: auto; }
 .masthead nav a { color: var(--text); }
 .masthead nav a[aria-current="page"] { color: var(--link); }
 
@@ -64,13 +64,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 main.wrap { padding-top: 2.5rem; padding-bottom: 3rem; }
 
 /* ---------- intro: text left, photo right ---------- */
-.intro { display: flex; gap: 2rem; align-items: flex-start; }
+.intro { display: flex; gap: 2rem; align-items: center; }
 .intro .who { flex: 1; min-width: 0; }
 .intro h1 { font-size: 2rem; font-weight: 500; line-height: 1.15; margin: 0 0 0.35rem; }
 .intro .role { margin: 0 0 0.2rem; }
 .intro .tagline { margin: 0 0 0.9rem; color: var(--muted); font-style: italic; }
 .portrait {
   display: block; width: 170px; height: auto; flex-shrink: 0;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: center bottom; /* trims sky off the top */
   border-radius: 4px; background: var(--rule);
 }
 
@@ -157,7 +158,7 @@ footer .inner { border-top: 1px solid var(--rule); padding-top: 1rem; }
 /* ---------- small screens ---------- */
 @media (max-width: 600px) {
   main.wrap { padding-top: 1.75rem; }
-  .intro { flex-direction: column-reverse; gap: 1.25rem; }
+  .intro { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
   .portrait { width: 130px; }
   .intro h1 { font-size: 1.75rem; }
   .news li { grid-template-columns: 1fr; gap: 0; margin-bottom: 0.7rem; }
