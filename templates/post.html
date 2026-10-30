@@ -5,28 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
 <link rel="stylesheet" href="/style.css">
-<script>
-  (function () {
-    var d = document.documentElement, t = null;
-    try { t = localStorage.getItem('theme'); } catch (e) {}
-    if (t !== 'light' && t !== 'dark') {
-      t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    d.dataset.theme = t;
-    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#000000';
-    d.classList.add('js');
-    // stagger the entrance as soon as the HTML is parsed — never wait on art.js
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.reveal').forEach(function (el, i) { el.style.setProperty('--i', i); });
-      d.classList.add('ready');
-    });
-  })();
-</script>
 <title>{{title}} — Sagnik Mukherjee</title>
 <meta name="description" content="{{summary}}">
 <meta property="og:type" content="article">
@@ -35,30 +14,49 @@
 <meta property="og:url" content="{{url}}">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+<script>
+  (function () {
+    var d = document.documentElement, t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    d.dataset.theme = t;
+    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#16181c';
+  })();
+</script>
 </head>
-<body class="post-page">
+<body>
 
-<div id="scene" aria-hidden="true"><canvas id="paper"></canvas></div>
+<header class="masthead">
+  <div class="wrap">
+    <a class="site-title" href="/">Sagnik Mukherjee</a>
+    <nav>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/data/cv.pdf" target="_blank" rel="noopener">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
 
-<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
-  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
-  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-</button>
-
-<main id="app">
-  <article class="site post">
-    <div class="post-top reveal">
-      <a class="back" href="/">← Sagnik Mukherjee</a>
-    </div>
-    <h1 class="reveal">{{title}}</h1>
-    <p class="post-meta reveal"><time datetime="{{date_iso}}">{{date}}</time> · {{reading_time}} min read</p>
-    <div class="post-body reveal">
+<main class="wrap">
+  <article class="post">
+    <h1>{{title}}</h1>
+    <p class="post-meta"><time datetime="{{date_iso}}">{{date}}</time> · {{reading_time}} min read · <a href="/blog/">all posts</a></p>
+    <div class="post-body">
 {{content}}
     </div>
   </article>
 </main>
 
-<script src="/art.js" defer></script>
+<footer class="wrap"><div class="inner">© 2026 Sagnik Mukherjee</div></footer>
+
+<script src="/site.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>

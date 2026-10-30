@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the blog.
 
-Reads Markdown from posts/, writes HTML into blog/, and lists each post
-under its section on index.html.
+Reads Markdown from posts/ and writes HTML into blog/: one page per post,
+plus blog/index.html listing them all (linked from "Blog" in the top bar).
 
     python3 build.py            # build
     python3 build.py --serve    # build, then serve on http://localhost:8080
@@ -12,7 +12,6 @@ Post format — posts/2026-09-11-some-slug.md:
     ---
     title: Why RL updates are sparse
     date: 2026-09-11
-    tag: Mini Research       # optional red label, e.g. Idea, Mini Research
     summary: One line for link previews.                 # optional
     draft: true                                          # optional, skips it
     ---
@@ -31,8 +30,6 @@ import markdown
 
 SITE_URL = "https://sagnikmukherjee.github.io"
 AUTHOR = "Sagnik Mukherjee"
-# homepage sections, keyed by the `section:` front-matter field
-SECTIONS = ("research",)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR = os.path.join(ROOT, "posts")
@@ -168,9 +165,6 @@ def load_posts():
                 "title": meta.get("title") or slug.replace("-", " ").capitalize(),
                 "date": date,
                 "tags": parse_tags(meta.get("tags")),
-                "tag": meta.get("tag", ""),
-                "section": meta.get("section", "research").lower()
-                if meta.get("section", "research").lower() in SECTIONS else "research",
                 "summary": meta.get("summary") or first_paragraph(body),
                 "content": restore_math(
                     wrap_tables(md.convert(protect_math(body, math_store))), math_store
@@ -193,29 +187,21 @@ def render(template_name, **fields):
     return out
 
 
-def tag_pills(tags):
-    if not tags:
-        return ""
-    return "".join(f"<span>{html.escape(t)}</span>" for t in tags)
-
-
-def short_date(d):
-    return f"{d.strftime('%b')} {d.year}".replace("Sep ", "Sept ")
-
-
-def post_list_items(posts, indent="      "):
-    """`<tag> Title ........ date` rows, newest first."""
+def post_list_items(posts):
+    """Title, date and one-line summary per post, newest first."""
+    if not posts:
+        return '  <p class="empty">Nothing here yet — first post soon.</p>'
     rows = []
     for post in posts:
-        tag = (f'<span class="tag">{html.escape(post["tag"])}</span> '
-               if post["tag"] else "")
+        summary = f'\n      <p>{html.escape(post["summary"])}</p>' if post["summary"] else ""
         rows.append(
-            f'{indent}<a class="reveal" href="/blog/{post["slug"]}.html">\n'
-            f'{indent}  <span class="lc">{tag}{html.escape(post["title"])}</span>\n'
-            f'{indent}  <span class="date">{short_date(post["date"])}</span>\n'
-            f'{indent}</a>'
+            f'    <li>\n'
+            f'      <a class="title" href="/blog/{post["slug"]}.html">{html.escape(post["title"])}</a>\n'
+            f'      <time datetime="{post["date"]:%Y-%m-%d}">{post["date"]:%B %-d, %Y}</time>'
+            f'{summary}\n'
+            f'    </li>'
         )
-    return "\n".join(rows)
+    return '  <ul class="posts">\n' + "\n".join(rows) + "\n  </ul>"
 
 
 def write(path, text):
@@ -240,10 +226,9 @@ def build_posts(posts):
                 "post.html",
                 title=html.escape(post["title"]),
                 summary=html.escape(post["summary"]),
-                date=post["date"].strftime("%B %d, %Y"),
+                date=f'{post["date"]:%B %-d, %Y}',
                 date_iso=post["date"].strftime("%Y-%m-%d"),
                 reading_time=str(post["reading_time"]),
-                tags=tag_pills(post["tags"]),
                 content=post["content"],
                 url=post["url"],
             ),
@@ -257,35 +242,10 @@ def build_posts(posts):
     print("  wrote         blog/index.html")
 
 
-def update_homepage(posts):
-    """Fill each <!-- POSTS:section --> block in index.html with its posts."""
-    path = os.path.join(ROOT, "index.html")
-    with open(path, encoding="utf-8") as fh:
-        page = original = fh.read()
-
-    for section in SECTIONS:
-        start, end = f"<!-- POSTS:{section} -->", f"<!-- /POSTS:{section} -->"
-        if start not in page or end not in page:
-            continue
-        rows = post_list_items([p for p in posts if p["section"] == section])
-        page = re.sub(
-            re.escape(start) + ".*?" + re.escape(end),
-            lambda _: f"{start}\n{rows}\n{end}" if rows else f"{start}\n{end}",
-            page,
-            flags=re.DOTALL,
-        )
-
-    if page != original:
-        write(path, page)
-        print("  wrote         index.html (sections)")
-    else:
-        print("  unchanged     index.html")
-
-
 def stamp_assets():
     """Version the css/js links so a browser can never serve a stale stylesheet."""
     assets = {}
-    for name in ("style.css", "art.js"):
+    for name in ("style.css", "site.js"):
         f = os.path.join(ROOT, name)
         if os.path.exists(f):
             assets[name] = int(os.path.getmtime(f))
@@ -314,7 +274,6 @@ def main():
     print("building…")
     posts = load_posts()
     build_posts(posts)
-    update_homepage(posts)
     stamp_assets()
     print(f"done — {len(posts)} post{'' if len(posts) == 1 else 's'}")
 

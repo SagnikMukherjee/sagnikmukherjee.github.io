@@ -7,11 +7,7 @@
 <meta name="description" content="Sagnik Mukherjee — PhD candidate at UIUC working on reinforcement learning for language models.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="/style.css?v=1793310644">
+<link rel="stylesheet" href="/style.css?v=1793334296">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sagnik Mukherjee">
@@ -28,152 +24,146 @@
       t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     d.dataset.theme = t;
-    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#000000';
-    d.classList.add('js');
-    // stagger the entrance as soon as the HTML is parsed — never wait on art.js
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.reveal').forEach(function (el, i) { el.style.setProperty('--i', i); });
-      d.classList.add('ready');
-    });
+    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#16181c';
   })();
 </script>
-
 </head>
 <body>
 
-<!-- the ground, then a small pantheon drawn in the open space on the right -->
-<div id="scene" aria-hidden="true">
-  <canvas id="paper"></canvas>
-  <canvas id="art" title="Click for the next one"></canvas>
-</div>
-
-<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
-  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
-  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-</button>
-
-<main id="app">
-  <header class="site">
-    <section class="box intro">
-    <div class="title-row">
-      <h1 class="reveal">Sagnik Mukherjee</h1>
-    </div>
-    <p class="tagline">LLMs · Post-training · Optimization · Multi-turn Decision Making</p>
-
-    <p class="bio">I’m a PhD candidate at UIUC, working on <b>Reinforcement Learning for LM post-training</b>
-      with <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noopener">Dilek Hakkani-Tür</a>
-      and <a href="https://haopeng-nlp.github.io" target="_blank" rel="noopener">Hao Peng</a>.
-      I was the first to discover <a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">emergent
-      structures in on-policy training</a>, which later spawned a research thread at the intersection of
-      optimization and on-policy training in LLMs.
-      Lately I’ve been thinking about agentic sequential decision making — specifically, the delayed
-      consequences of actions and partial observability. Feel free to reach out if you’d like to
-      collaborate or chat.</p>
-
-    <div class="social">
-      <a class="btn btn-solid" href="/data/cv.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>CV</span></a>
-      <a class="btn" href="mailto:sagnikm3@illinois.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Email</span></a>
-      <a href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
-      <a href="https://twitter.com/saagnikkk" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
-      <a href="https://github.com/SagnikMukherjee" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-    </div>
-    </section>
-    <aside class="photo-col">
-      <picture>
-        <source type="image/webp"
-          srcset="/img/profile-seattle-240.webp 240w, /img/profile-seattle-360.webp 360w, /img/profile-seattle-480.webp 480w, /img/profile-seattle-724.webp 724w"
-          sizes="(max-width: 680px) 150px, (max-width: 1180px) 200px, 255px">
-        <img class="portrait" src="/img/profile-seattle.jpg" alt="Sagnik Mukherjee" width="724" height="1084"
-          fetchpriority="high" decoding="async">
-      </picture>
-    </aside>
-
-    <section class="box news-box">
-    <div class="news">
-      <h3 class="reveal">News</h3>
-      <div class="news-scroll" tabindex="0" aria-label="News">
-        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">New preprint: <a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> — we explain, theoretically, why on-policy data causes sparse updates.</span></div>
-        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt"><span class="tag">NeurIPS 2026</span><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR</a> was accepted at <b>NeurIPS 2026</b>.</span></div>
-        <div class="news-item reveal"><span class="date">Sept 2026</span><span class="nt">Gave a talk, “Optimization Geometry in LLM Post-Training”, at the <a href="https://calendars.illinois.edu/detail/7097/33560703" target="_blank" rel="noopener">UIUC Machine Learning Seminar</a>.</span></div>
-        <div class="news-item reveal"><span class="date">Jul 2026</span><span class="nt"><span class="tag oral">ICML 2026 · <u>Oral</u></span>Presented <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam?</a> as an <b>Oral</b> at the ICML 2026 main conference in Seoul.</span></div>
-        <div class="news-item reveal"><span class="date">May 2026</span><span class="nt">Started my internship at <b>Microsoft Frontier Tuning</b>, hosted by Harsh Jhamtani and Jacob Andreas.</span></div>
-      </div>
-    </div>
-    </section>
-
-    <section class="box research-directions" aria-labelledby="research-directions-heading">
-      <h3 id="research-directions-heading" class="reveal">Research Directions</h3>
-      <div class="research-direction">
-        <h4 class="reveal">Optimization in Post-Training</h4>
-        <p class="reveal">How does on-policy data shape the optimization landscape and training dynamics of language models? I study the structure that emerges during on-policy training—from sparse parameter updates to preserved spectral structure—and use these insights to develop more efficient methods for LLM post-training.</p>
-        <ul class="direction-papers">
-          <li class="reveal"><a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</a> <span class="direction-venue">(NeurIPS 2025)</span></li>
-          <li class="reveal"><a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a> <span class="direction-venue">(ICML 2026 · Oral)</span></li>
-          <li class="reveal"><a href="https://arxiv.org/abs/2607.19331" target="_blank" rel="noopener">ISO: An RLVR-Native Optimization Stack</a> <span class="direction-venue">(Preprint)</span></li>
-          <li class="reveal"><a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> <span class="direction-venue">(Preprint)</span></li>
-        </ul>
-      </div>
-      <div class="research-direction">
-        <h4 class="reveal">Sequential Decision Making</h4>
-        <p class="reveal">How does the notion of &ldquo;Delayed consequences of actions&rdquo; and &ldquo;Partial Observability&rdquo; affect reasoning and decision making in LLMs?</p>
-        <p class="reveal direction-status">Work in progress — first results soon.</p>
-      </div>
-    </section>
-
-    <section class="box papers">
-    <nav class="list">
-      <h3 class="reveal">Papers</h3>
-<!-- POSTS:research -->
-<!-- /POSTS:research -->
-      <a class="reveal" href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag preprint">Preprint</span> Understanding LLM Parameter Update Sparsity through the Lens of Fisher</span>
-        <span class="date">Sept 2026</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2607.19331" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag preprint">Preprint</span> ISO: An RLVR-Native Optimization Stack</span>
-        <span class="date">Jul 2026</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag">NeurIPS 2026</span> VASR: Variance-Aware Systematic Resampling for Reward-Guided Diffusion</span>
-        <span class="date">Apr 2026</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag oral">ICML 2026 · <u>Oral</u></span> Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</span>
-        <span class="date">Feb 2026</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag">NeurIPS 2025</span> Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</span>
-        <span class="date">May 2025</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2502.02362" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag">ICML 2025</span> Premise-Augmented Reasoning Chains Improve Error Identification in Math Reasoning</span>
-        <span class="date">Feb 2025</span>
-      </a>
-      <a class="reveal" href="https://arxiv.org/abs/2410.19054" target="_blank" rel="noopener">
-        <span class="lc"><span class="tag">NAACL 2025</span> Infogent: An Agent-Based Framework for Web Information Aggregation</span>
-        <span class="date">Oct 2024</span>
-      </a>
+<header class="masthead">
+  <div class="wrap">
+    <a class="site-title" href="/">Sagnik Mukherjee</a>
+    <nav>
+      <a href="/blog/">Blog</a>
+      <a href="/data/cv.pdf" target="_blank" rel="noopener">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
     </nav>
-    </section>
+  </div>
+</header>
 
-    <section class="box mentoring" aria-labelledby="mentoring-heading">
-      <h3 id="mentoring-heading" class="reveal">Mentoring</h3>
-      <p class="reveal">I have had the opportunity to work with some amazing students.</p>
-      <ul class="mentoring-list">
-        <li class="reveal">
-          <a href="https://pavanjay.com/" target="_blank" rel="noopener">Pavan Jayasinha</a> <span class="mentoring-affiliation">— now at OpenAI</span>
-          <a class="mentoring-paper" href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a>
-        </li>
-        <li class="reveal">
-          <a href="https://mziycfh.github.io/" target="_blank" rel="noopener">Yufan Zhang</a> <span class="mentoring-affiliation">— visiting student at UIUC</span>
-          <a class="mentoring-paper" href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a>
-        </li>
-        <li class="reveal">Saket Vispute <span class="mentoring-affiliation">— student at IIT Bombay</span></li>
-      </ul>
-    </section>
-  </header>
+<main class="wrap">
+
+  <section class="intro">
+    <div class="who">
+      <h1>Sagnik Mukherjee</h1>
+      <p class="role">PhD Candidate, <a href="https://siebelschool.illinois.edu" target="_blank" rel="noopener">UIUC</a></p>
+      <p class="tagline">LLMs · Post-training · Optimization · Multi-turn Decision Making</p>
+      <div class="links">
+        <a href="mailto:sagnikm3@illinois.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Email</a>
+        <a href="/data/cv.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>CV</a>
+        <a href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>Scholar</a>
+        <a href="https://twitter.com/saagnikkk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Twitter</a>
+        <a href="https://github.com/SagnikMukherjee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
+      </div>
+      <p>I’m a PhD candidate at UIUC, working on <b>Reinforcement Learning for LM post-training</b>
+        with <a href="https://uiuc-conversational-ai-lab.github.io" target="_blank" rel="noopener">Dr. Dilek Hakkani-Tür</a>
+        and <a href="https://haopeng-nlp.github.io" target="_blank" rel="noopener">Dr. Hao Peng</a>.
+        I was the first to discover <a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">emergent
+        structures in on-policy training</a>, which later spawned a research thread at the intersection of
+        optimization and on-policy training in LLMs.
+        Lately I’ve been thinking about agentic sequential decision making — specifically, the delayed
+        consequences of actions and partial observability.</p>
+      <p>Feel free to reach out if you’d like to collaborate or chat.</p>
+    </div>
+    <picture>
+      <source type="image/webp"
+        srcset="/img/profile-seattle-240.webp 240w, /img/profile-seattle-360.webp 360w, /img/profile-seattle-480.webp 480w"
+        sizes="(max-width: 600px) 130px, 170px">
+      <img class="portrait" src="/img/profile-seattle.jpg" alt="Sagnik Mukherjee" width="724" height="1084"
+        fetchpriority="high" decoding="async">
+    </picture>
+  </section>
+
+  <h2>News</h2>
+  <ul class="news" tabindex="0" aria-label="News">
+    <li><time>Sept 2026</time><span>New preprint: <a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> — we explain, theoretically, why on-policy data causes sparse updates.</span></li>
+    <li><time>Sept 2026</time><span><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR</a> was accepted at <b>NeurIPS 2026</b>.</span></li>
+    <li><time>Sept 2026</time><span>Gave a talk, “Optimization Geometry in LLM Post-Training”, at the <a href="https://calendars.illinois.edu/detail/7097/33560703" target="_blank" rel="noopener">UIUC Machine Learning Seminar</a>.</span></li>
+    <li><time>Jul 2026</time><span>Presented <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam?</a> as an <b class="oral">Oral</b> at <b>ICML 2026</b> in Seoul.</span></li>
+    <li><time>May 2026</time><span>Started my internship at <b>Microsoft Frontier Tuning</b>. Hosts: Harsh Jhamtani and Jacob Andreas.</span></li>
+  </ul>
+
+  <h2>Research</h2>
+  <div class="direction">
+    <h3>Optimization in Post-Training</h3>
+    <p>How does on-policy data shape the optimization landscape and training dynamics of language models? I study the structure that emerges during on-policy training—from sparse parameter updates to preserved spectral structure—and use these insights to develop more efficient methods for LLM post-training.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</a> <span class="venue">(NeurIPS 2025)</span></li>
+      <li><a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a> <span class="venue">(ICML 2026, Oral)</span></li>
+      <li><a href="https://arxiv.org/abs/2607.19331" target="_blank" rel="noopener">ISO: An RLVR-Native Optimization Stack</a> <span class="venue">(Preprint)</span></li>
+      <li><a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a> <span class="venue">(Preprint)</span></li>
+    </ul>
+  </div>
+  <div class="direction">
+    <h3>Generative Modeling for Post-Training</h3>
+    <p>Inference-time alignment and alternate views of post-training.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR: Variance-Aware Systematic Resampling for Reward-Guided Diffusion</a> <span class="venue">(NeurIPS 2026)</span></li>
+      <li>VarPO <span class="venue">(soon to appear)</span></li>
+    </ul>
+  </div>
+  <div class="direction">
+    <h3>Sequential Decision Making</h3>
+    <p>How does the notion of &ldquo;delayed consequences of actions&rdquo; and &ldquo;partial observability&rdquo; affect reasoning and decision making in LLMs?</p>
+    <p class="muted">Work in progress.</p>
+  </div>
+
+  <h2>Publications <a class="aside" href="https://scholar.google.com/citations?user=v4lvWXoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></h2>
+  <ul class="pubs">
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a><br>
+      <span class="authors">Yufan Zhang, <span class="me">Sagnik Mukherjee</span>, Hao Peng</span><br>
+      <span class="venue">Preprint</span>, 2026
+      <div class="pub-links"><a href="https://x.com/yufanzh_/status/2110431126254711227" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Tweet</a></div>
+    </li>
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2607.19331" target="_blank" rel="noopener">ISO: An RLVR-Native Optimization Stack</a><br>
+      <span class="authors">Hanqing Zhu, Wenyan Cong, Zhizhou Sha, <span class="me">Sagnik Mukherjee</span>, Xinyuan Song, David González-Martínez, Xiaoxia Wu, Yuandong Tian, Shiwei Liu, David Z. Pan, Zhangyang Wang</span><br>
+      <span class="venue">Preprint</span>, 2026
+    </li>
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2604.06779" target="_blank" rel="noopener">VASR: Variance-Aware Systematic Resampling for Reward-Guided Diffusion</a><br>
+      <span class="authors">Shivanshu Shekhar, <span class="me">Sagnik Mukherjee</span>, Jia Yi Zhang, Tong Zhang</span><br>
+      <span class="venue">NeurIPS</span>, 2026
+      <div class="pub-links"><a href="https://x.com/saagnikkk/status/2061673763712942329" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Tweet</a></div>
+    </li>
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a><br>
+      <span class="authors"><span class="me">Sagnik Mukherjee</span>, Lifan Yuan, Pavan Jayasinha, Dilek Hakkani-Tür, Hao Peng</span><br>
+      <span class="venue">ICML</span>, 2026 <span class="oral">(Oral)</span>
+      <div class="pub-links"><a href="https://x.com/saagnikkk/status/1995186197145022944" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Tweet</a></div>
+    </li>
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2505.11711" target="_blank" rel="noopener">Reinforcement Learning Finetunes Small Subnetworks in Large Language Models</a><br>
+      <span class="authors"><span class="me">Sagnik Mukherjee</span>, Lifan Yuan, Dilek Hakkani-Tür, Hao Peng</span><br>
+      <span class="venue">NeurIPS</span>, 2025
+      <div class="pub-links"><a href="https://x.com/saagnikkk/status/1924885542468256212" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Tweet</a></div>
+    </li>
+    <li>
+      <a class="title" href="https://arxiv.org/abs/2502.02362" target="_blank" rel="noopener">Premise-Augmented Reasoning Chains Improve Error Identification in Math Reasoning with LLMs</a><br>
+      <span class="authors"><span class="me">Sagnik Mukherjee</span>, Abhinav Chinta, Takyoung Kim, Tarun Anoop Sharma, Dilek Hakkani-Tür</span><br>
+      <span class="venue">ICML</span>, 2025
+      <div class="pub-links"><a href="https://x.com/saagnikkk/status/1918387564945219598" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>Tweet</a></div>
+    </li>
+  </ul>
+
+  <h2>Mentoring</h2>
+  <p>I have had the opportunity to work with some amazing students.</p>
+  <ul class="mentees">
+    <li><a href="https://pavanjay.com/" target="_blank" rel="noopener">Pavan Jayasinha</a> <span class="muted">— now at OpenAI</span><br>
+      <a href="https://arxiv.org/abs/2602.07729" target="_blank" rel="noopener">Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs</a></li>
+    <li><a href="https://mziycfh.github.io/" target="_blank" rel="noopener">Yufan Zhang</a> <span class="muted">— visiting student at UIUC</span><br>
+      <a href="https://arxiv.org/abs/2609.36262" target="_blank" rel="noopener">Understanding LLM Parameter Update Sparsity through the Lens of Fisher</a></li>
+    <li><a href="https://in.linkedin.com/in/saket-vispute-83176831b" target="_blank" rel="noopener">Saket Vispute</a> <span class="muted">— student at IIT Bombay</span></li>
+  </ul>
+
 </main>
 
-<script src="/art.js?v=1793310467" defer></script>
+<footer class="wrap"><div class="inner">© 2026 Sagnik Mukherjee</div></footer>
+
+<script src="/site.js?v=1793323513" defer></script>
 </body>
 </html>

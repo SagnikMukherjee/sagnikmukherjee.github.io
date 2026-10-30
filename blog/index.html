@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="/style.css?v=1793310644">
+<link rel="stylesheet" href="/style.css?v=1793334296">
+<title>Blog Posts — Sagnik Mukherjee</title>
+<meta name="description" content="Blog posts by Sagnik Mukherjee.">
 <script>
   (function () {
     var d = document.documentElement, t = null;
@@ -18,39 +16,33 @@
       t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     d.dataset.theme = t;
-    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#000000';
-    d.classList.add('js');
-    // stagger the entrance as soon as the HTML is parsed — never wait on art.js
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.reveal').forEach(function (el, i) { el.style.setProperty('--i', i); });
-      d.classList.add('ready');
-    });
+    if (t === 'dark') document.querySelector('meta[name="theme-color"]').content = '#16181c';
   })();
 </script>
-<title>Writing — Sagnik Mukherjee</title>
-<meta name="description" content="Writing by Sagnik Mukherjee.">
 </head>
-<body class="post-page">
+<body>
 
-<div id="scene" aria-hidden="true"><canvas id="paper"></canvas></div>
-
-<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
-  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
-  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-</button>
-
-<main id="app">
-  <div class="site post">
-    <div class="post-top reveal">
-      <a class="back" href="/">← Sagnik Mukherjee</a>
-    </div>
-    <nav class="list">
-      <h3 class="reveal">Writing</h3>
-
+<header class="masthead">
+  <div class="wrap">
+    <a class="site-title" href="/">Sagnik Mukherjee</a>
+    <nav>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/data/cv.pdf" target="_blank" rel="noopener">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between day and night">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.6M19.4 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
     </nav>
   </div>
+</header>
+
+<main class="wrap">
+  <h1 class="page-title">Blog Posts</h1>
+  <p class="empty">Nothing here yet — first post soon.</p>
 </main>
 
-<script src="/art.js?v=1793310467" defer></script>
+<footer class="wrap"><div class="inner">© 2026 Sagnik Mukherjee</div></footer>
+
+<script src="/site.js?v=1793323513" defer></script>
 </body>
 </html>
